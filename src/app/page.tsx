@@ -1,10 +1,18 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Inicio | ISA'S Marketing Digital - Agencia + IA",
+  description: "Bienvenido a ISA'S Marketing Digital. Transformamos marcas con estrategias digitales, desarrollo web de alto impacto y automatizaciones inteligentes.",
+};
 import Link from "next/link";
 import { FiSmartphone, FiMonitor, FiCode, FiTrendingUp, FiArrowRight, FiActivity, FiBook, FiShield, FiEye, FiTarget, FiStar, FiLayers, FiCpu } from "react-icons/fi";
 import Footer from "@/components/Footer/Footer";
 import AnimatedCounters from "@/components/AnimatedCounter/AnimatedCounter";
 import Marquee from "@/components/Marquee/Marquee";
 import GradientOrbs from "@/components/GradientOrbs/GradientOrbs";
+import HeroParticles from "@/components/HeroParticles/HeroParticles";
+import HeroTextReveal from "@/components/HeroTextReveal/HeroTextReveal";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -16,22 +24,36 @@ export default function Home() {
           <source src="https://res.cloudinary.com/dkofkzzc5/video/upload/v1772738106/6561561-uhd_3840_2160_25fps_b8pp0i.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay}></div>
+        <HeroParticles />
+
+        {/* Floating holographic icons */}
+        <div className={styles.floatingIcons} aria-hidden="true">
+          <div className={`${styles.floatingIcon} ${styles.floatIcon1}`}><FiSmartphone /></div>
+          <div className={`${styles.floatingIcon} ${styles.floatIcon2}`}><FiCode /></div>
+          <div className={`${styles.floatingIcon} ${styles.floatIcon3}`}><FiTrendingUp /></div>
+          <div className={`${styles.floatingIcon} ${styles.floatIcon4}`}><FiMonitor /></div>
+          <div className={`${styles.floatingIcon} ${styles.floatIcon5}`}><FiCpu /></div>
+          <div className={`${styles.floatingIcon} ${styles.floatIcon6}`}><FiActivity /></div>
+        </div>
+
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle} data-aos="fade-down" data-aos-duration="900">AGENCIA DE PUBLICIDAD +IA</h1>
-          <p className={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="100">
-            Expertos en Marketing Digital, Automatización con Inteligencia Artificial, y Estrategias Comerciales para potenciar el crecimiento de tu negocio.
-          </p>
-          <div className={styles.logoCentral} data-aos="zoom-in" data-aos-delay="200">
-            <div className={styles.logoCentralContainer}>
-              <Image src="/logo1.png" alt="ISA'S MARKETING DIGITAL" width={250} height={250} className={styles.heroLogo} priority />
-            </div>
+          <HeroTextReveal
+            title="AGENCIA DIGITAL +IA"
+            subtitle="Expertos en Marketing Digital, Desarrollo de Software, Automatización con Inteligencia Artificial, y Estrategias Comerciales para potenciar el crecimiento de tu negocio."
+          />
+
+
+          <Link href="/contacto" className={styles.btnImpulsa}>
+            <span className={styles.btnText}>IMPULSA TU MARCA</span>
+            <span className={styles.btnShimmer}></span>
+          </Link>
+
+          {/* Animated Counters Moved Inside Hero */}
+          <div className={styles.heroCountersWrapper}>
+            <AnimatedCounters />
           </div>
-          <Link href="/contacto" className={styles.btnImpulsa} data-aos="fade-up" data-aos-delay="400">IMPULSA TU MARCA</Link>
         </div>
       </section>
-
-      {/* Animated Counters */}
-      <AnimatedCounters />
 
       {/* Marquee Strip */}
       <Marquee />

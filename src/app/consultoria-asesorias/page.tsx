@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Consultoría y Asesorías | ISA'S Marketing Digital",
+    description: "Estrategias personalizadas, auditorías y planes de crecimiento para llevar tu negocio al siguiente nivel con decisiones inteligentes.",
+};
 import Image from "next/image";
 import { FiTrendingUp } from "react-icons/fi";
 import Footer from "@/components/Footer/Footer";
@@ -18,35 +24,6 @@ export default function ConsultoriaAsesorias() {
                     <p className={styles.serviceHeroSubtitle} data-aos="fade-up" data-aos-delay="200">
                         Estrategias personalizadas, auditorías y planes de crecimiento para llevar tu negocio al siguiente nivel con decisiones inteligentes.
                     </p>
-                </div>
-            </section>
-
-            {/* Service Detail Section */}
-            <section className={styles.serviceDetailSection}>
-                <div className={styles.serviceContainer}>
-                    <div className={styles.serviceContentGrid}>
-                        <div className={styles.serviceTextContent} data-aos="fade-right">
-                            <h2>ESTRATEGIA Y CRECIMIENTO EMPRESARIAL</h2>
-                            <p>
-                                Ofrecemos consultoría especializada en marketing digital, posicionamiento de marca y estrategia comercial. Nuestro enfoque combina análisis profundo, experiencia práctica y herramientas modernas para que cada decisión impulse resultados reales.
-                            </p>
-                            <p>
-                                Trabajamos contigo de cerca, entendiendo tu mercado, tus metas y los desafíos únicos de tu negocio para diseñar planes de acción concretos y medibles.
-                            </p>
-                            <p>
-                                Nuestras asesorías cubren desde la auditoría de tu presencia digital actual hasta la creación de roadmaps de crecimiento, incluyendo estrategias de branding, posicionamiento SEO, campañas publicitarias y optimización de procesos comerciales.
-                            </p>
-                        </div>
-
-                        <div className={styles.serviceImageContent} data-aos="fade-left" data-aos-delay="200">
-                            <div className={styles.serviceImagePlaceholder} data-label="Estrategia Digital">
-                                <Image src="/c1.png" alt="Estrategia Digital" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
-                            </div>
-                            <div className={styles.serviceImagePlaceholder} data-label="Asesoría de Marca">
-                                <Image src="/c2.jpg" alt="Asesoría de Marca" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -74,6 +51,35 @@ export default function ConsultoriaAsesorias() {
                             <div className={styles.methodologyCircle}>4</div>
                             <h3 className={styles.methodologyTitle}>Optimización</h3>
                             <p>Medimos resultados y ajustamos la estrategia para maximizar el retorno de inversión.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Service Detail Section */}
+            <section className={styles.serviceDetailSection}>
+                <div className={styles.serviceContainer}>
+                    <div className={styles.serviceContentGrid}>
+                        <div className={styles.serviceTextContent} data-aos="fade-right">
+                            <h2>ESTRATEGIA Y CRECIMIENTO EMPRESARIAL</h2>
+                            <p>
+                                Ofrecemos consultoría especializada en marketing digital, posicionamiento de marca y estrategia comercial. Nuestro enfoque combina análisis profundo, experiencia práctica y herramientas modernas para que cada decisión impulse resultados reales.
+                            </p>
+                            <p>
+                                Trabajamos contigo de cerca, entendiendo tu mercado, tus metas y los desafíos únicos de tu negocio para diseñar planes de acción concretos y medibles.
+                            </p>
+                            <p>
+                                Nuestras asesorías cubren desde la auditoría de tu presencia digital actual hasta la creación de roadmaps de crecimiento, incluyendo estrategias de branding, posicionamiento SEO, campañas publicitarias y optimización de procesos comerciales.
+                            </p>
+                        </div>
+
+                        <div className={styles.serviceImageContent} data-aos="fade-left" data-aos-delay="200">
+                            <div className={styles.serviceImagePlaceholder} data-label="Estrategia Digital">
+                                <Image src="/c1.png" alt="Estrategia Digital" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                            </div>
+                            <div className={styles.serviceImagePlaceholder} data-label="Asesoría de Marca">
+                                <Image src="/c2.jpg" alt="Asesoría de Marca" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                            </div>
                         </div>
                     </div>
                 </div>

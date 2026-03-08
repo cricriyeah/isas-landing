@@ -226,7 +226,7 @@
 
 .serviceCtaButton {
     background: var(--accent);
-    color: white;
+    color: var(--btn-text-dark);
     padding: 12px 32px;
     border-radius: 10px;
     font-weight: 600;

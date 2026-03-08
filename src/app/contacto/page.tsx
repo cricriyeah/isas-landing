@@ -1,7 +1,14 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Contacto | ISA'S Marketing Digital",
+    description: "Contáctanos para impulsar tu negocio con marketing digital, desarrollo web y automatizaciones con IA en La Paz, B.C.S.",
+};
 import { FiSend, FiUsers, FiStar, FiClock, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaTiktok, FaLinkedinIn, FaBolt } from "react-icons/fa";
 import Footer from "@/components/Footer/Footer";
+import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./page.module.css";
 
 export default function Contacto() {
@@ -62,40 +69,7 @@ export default function Contacto() {
                             <h2 className={styles.formTitle}>Envíanos un mensaje</h2>
                             <p className={styles.formDescription}>Completa el formulario y nos pondremos en contacto contigo pronto</p>
                         </div>
-                        <form id="contactForm">
-                            <div className={styles.formGroup}>
-                                <label className={styles.formLabel} htmlFor="name">Nombre completo *</label>
-                                <input type="text" id="name" name="nombre" className={styles.formInput} placeholder="Ej: María González" required />
-                            </div>
-                            <div className={styles.formGroup}>
-                                <label className={styles.formLabel} htmlFor="email">Correo electrónico *</label>
-                                <input type="email" id="email" name="email" className={styles.formInput} placeholder="tu@empresa.com" required />
-                            </div>
-                            <div className={styles.formGroup}>
-                                <label className={styles.formLabel} htmlFor="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="telefono" className={styles.formInput} placeholder="+52 612 123 4567" />
-                            </div>
-                            <div className={styles.formGroup}>
-                                <label className={styles.formLabel} htmlFor="service">Servicio de interés *</label>
-                                <select id="service" name="servicio_interes" className={styles.formSelect} required>
-                                    <option value="">Selecciona un servicio</option>
-                                    <option value="redes-sociales">Gestión de Redes Sociales</option>
-                                    <option value="talleres">Talleres y Capacitación</option>
-                                    <option value="paginas-web">Desarrollo de Software + IA</option>
-                                    <option value="consultoria">Consultoría y Asesorías</option>
-                                    <option value="publicidad">Publicidad Física</option>
-                                    <option value="multiple">Múltiples servicios</option>
-                                </select>
-                            </div>
-                            <div className={styles.formGroup}>
-                                <label className={styles.formLabel} htmlFor="message">Cuéntanos sobre tu proyecto *</label>
-                                <textarea id="message" name="mensaje" className={styles.formTextarea} placeholder="Describe brevemente tu proyecto, objetivos y cómo podemos ayudarte..." required></textarea>
-                            </div>
-                            <button type="submit" className={styles.submitButton}>
-                                <FiSend size={16} style={{ marginRight: '8px' }} />
-                                ENVIAR MENSAJE
-                            </button>
-                        </form>
+                        <ContactForm />
                     </div>
 
                     <div className={styles.contactSidebar} data-aos="fade-left" data-aos-delay="200">

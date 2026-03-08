@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Casos de Éxito | ISA'S Marketing Digital",
+    description: "Descubre cómo hemos ayudado a empresas locales a alcanzar resultados extraordinarios con nuestras estrategias de marketing inteligente.",
+};
 import { FiArrowDown } from "react-icons/fi";
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";

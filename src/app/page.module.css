@@ -20,7 +20,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.35;
+    opacity: 0.25;
 }
 
 .heroOverlay {
@@ -29,19 +29,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 30, 0.3) 0%, rgba(11, 20, 38, 0.7) 100%);
-    mix-blend-mode: overlay;
+    background: linear-gradient(180deg, rgba(0, 0, 30, 0.4) 0%, rgba(11, 20, 38, 0.85) 100%);
     z-index: 1;
 }
 
 .heroContent {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 900px;
     margin: 0 auto;
 }
 
-.heroTitle {
+.heroContent h1 {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
@@ -50,7 +49,7 @@
     letter-spacing: -1px;
 }
 
-.heroSubtitle {
+.heroContent p {
     font-size: clamp(1rem, 2vw, 1.15rem);
     max-width: 700px;
     margin: 0 auto 1.5rem;
@@ -58,16 +57,216 @@
     line-height: 1.6;
 }
 
+/* ===== FLOATING HOLOGRAPHIC ICONS ===== */
+.floatingIcons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floatingIcon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: rgba(0, 229, 255, 0.35);
+    background: rgba(0, 229, 255, 0.04);
+    border: 1px solid rgba(0, 229, 255, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: floatDrift 8s ease-in-out infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.floatIcon1 {
+    top: 15%;
+    left: 8%;
+    animation: floatDrift 9s ease-in-out infinite, fadeInFloat 1s 0.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.floatIcon2 {
+    top: 25%;
+    right: 10%;
+    animation: floatDrift2 11s ease-in-out infinite, fadeInFloat 1s 0.8s forwards;
+    color: rgba(255, 0, 60, 0.3);
+    background: rgba(255, 0, 60, 0.04);
+    border-color: rgba(255, 0, 60, 0.08);
+}
+
+.floatIcon3 {
+    bottom: 30%;
+    left: 12%;
+    animation: floatDrift3 10s ease-in-out infinite, fadeInFloat 1s 1.1s forwards;
+}
+
+.floatIcon4 {
+    bottom: 20%;
+    right: 8%;
+    animation: floatDrift 12s ease-in-out infinite, fadeInFloat 1s 1.4s forwards;
+    color: rgba(180, 100, 255, 0.3);
+    background: rgba(180, 100, 255, 0.04);
+    border-color: rgba(180, 100, 255, 0.08);
+}
+
+.floatIcon5 {
+    top: 55%;
+    left: 5%;
+    animation: floatDrift2 8s ease-in-out infinite, fadeInFloat 1s 1.7s forwards;
+}
+
+.floatIcon6 {
+    top: 12%;
+    right: 18%;
+    animation: floatDrift3 13s ease-in-out infinite, fadeInFloat 1s 2s forwards;
+    color: rgba(255, 0, 60, 0.25);
+    background: rgba(255, 0, 60, 0.03);
+    border-color: rgba(255, 0, 60, 0.06);
+}
+
+@keyframes fadeInFloat {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floatDrift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(12px, -18px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-8px, -30px) rotate(-3deg);
+    }
+
+    75% {
+        transform: translate(15px, -12px) rotate(4deg);
+    }
+}
+
+@keyframes floatDrift2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-15px, -20px) rotate(-6deg);
+    }
+
+    50% {
+        transform: translate(10px, -35px) rotate(4deg);
+    }
+
+    75% {
+        transform: translate(-12px, -15px) rotate(-3deg);
+    }
+}
+
+@keyframes floatDrift3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(20px, -25px) rotate(8deg);
+    }
+
+    66% {
+        transform: translate(-10px, -40px) rotate(-5deg);
+    }
+}
+
+/* ===== LOGO + ORBITAL RING ===== */
 .logoCentral {
-    margin: 1.2rem auto;
+    margin: 1.5rem auto;
     display: flex;
     justify-content: center;
+    animation: fadeInUp 1s ease 0.8s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logoOrbitalRing {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbitalRing {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    border-top-color: rgba(0, 229, 255, 0.5);
+    border-right-color: rgba(255, 0, 60, 0.3);
+    animation: orbitSpin 6s linear infinite;
+}
+
+.orbitalRing2 {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    right: -16px;
+    bottom: -16px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-bottom-color: rgba(0, 229, 255, 0.2);
+    border-left-color: rgba(180, 100, 255, 0.15);
+    animation: orbitSpin 10s linear infinite reverse;
+}
+
+@keyframes orbitSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .logoCentralContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .heroLogo {
@@ -76,33 +275,109 @@
     object-fit: contain;
     transition: var(--transition);
     opacity: 0.9;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.2));
+    animation: logoBreathe 4s ease-in-out infinite;
+}
+
+@keyframes logoBreathe {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.2));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 35px rgba(0, 229, 255, 0.35));
+    }
 }
 
 .logoCentralContainer:hover .heroLogo {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 40px rgba(0, 229, 255, 0.5));
 }
 
+/* ===== CTA BUTTON — PULSE GLOW ===== */
 .btnImpulsa {
     background: var(--accent);
-    color: white;
-    padding: 14px 38px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition);
+    color: var(--btn-text-dark);
+    padding: 16px 42px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     margin: 1rem 0 1.5rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    animation: pulseGlow 3s ease-in-out infinite, fadeInUp 1s ease 1.2s both;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3),
+        0 0 40px rgba(0, 229, 255, 0.1);
+}
+
+.heroCountersWrapper {
+    width: 100%;
+    margin-top: 0.5rem;
+    animation: fadeInUp 1s ease 1.4s both;
+}
+
+.btnText {
+    position: relative;
+    z-index: 1;
+}
+
+.btnShimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: btnShimmerSweep 3s ease-in-out infinite 2s;
+}
+
+@keyframes btnShimmerSweep {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.3),
+            0 0 40px rgba(0, 229, 255, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.5),
+            0 0 60px rgba(0, 229, 255, 0.2),
+            0 0 80px rgba(0, 229, 255, 0.1);
+    }
 }
 
 .btnImpulsa:hover {
     background: var(--accent-light);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.5),
+        0 0 80px rgba(0, 229, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
 
 /* ===== STATS ===== */
 .statsSection {
@@ -730,12 +1005,17 @@
         background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
     }
 
-    .heroTitle {
+    .heroContent h1 {
         font-size: 2.5rem;
     }
 
     .heroLogo {
         height: 130px;
+    }
+
+    .logoOrbitalRing {
+        width: 160px;
+        height: 160px;
     }
 
     .statsSection {
@@ -789,12 +1069,23 @@
         min-height: 75vh;
     }
 
-    .heroTitle {
+    .heroContent h1 {
         font-size: 2rem;
     }
 
     .heroLogo {
         height: 110px;
+    }
+
+    .floatingIcon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .logoOrbitalRing {
+        width: 140px;
+        height: 140px;
     }
 
     .statsSection {
@@ -855,12 +1146,21 @@
         min-height: 70vh;
     }
 
-    .heroTitle {
+    .heroContent h1 {
         font-size: 1.7rem;
     }
 
     .heroLogo {
         height: 90px;
+    }
+
+    .floatingIcons {
+        display: none;
+    }
+
+    .logoOrbitalRing {
+        width: 120px;
+        height: 120px;
     }
 
     .servicesGrid {
@@ -888,12 +1188,17 @@
         min-height: 65vh;
     }
 
-    .heroTitle {
+    .heroContent h1 {
         font-size: 1.5rem;
     }
 
     .heroLogo {
         height: 80px;
+    }
+
+    .logoOrbitalRing {
+        width: 110px;
+        height: 110px;
     }
 }
 

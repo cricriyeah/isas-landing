@@ -1,15 +1,30 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { FiCode, FiLayout, FiServer, FiSmartphone, FiMonitor, FiShoppingCart, FiCpu, FiUsers } from "react-icons/fi";
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
 export default function PaginasWebIA() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        // Start the video 5 seconds ahead
+        if (videoRef.current) {
+            videoRef.current.currentTime = 5;
+            videoRef.current.play().catch(error => {
+                console.log("Video autoplay was prevented by the browser:", error);
+            });
+        }
+    }, []);
+
     return (
         <>
             {/* Hero Section */}
             <section className={styles.serviceHero}>
-                <video className={styles.serviceHeroVideo} autoPlay muted loop playsInline>
-                    <source src="https://res.cloudinary.com/dkofkzzc5/video/upload/v1772740300/7989443-hd_1920_1080_25fps_yyb8aw.mp4" type="video/mp4" />
+                <video ref={videoRef} className={styles.serviceHeroVideo} muted loop playsInline>
+                    <source src="https://res.cloudinary.com/dkofkzzc5/video/upload/v1772947770/14519236_3840_2160_60fps_1_-_FPS_-_Videobolt.net_dqtpqx.mp4" type="video/mp4" />
                 </video>
                 <div className={styles.serviceHeroContent}>
                     <div className={styles.serviceIconLarge} data-aos="fade-down"><FiCode size={28} /></div>

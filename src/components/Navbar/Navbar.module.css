@@ -150,7 +150,7 @@
 .ctaButton {
     flex-shrink: 0;
     background: var(--accent);
-    color: white;
+    color: var(--btn-text-dark);
     padding: 10px 24px;
     border-radius: 10px;
     font-weight: 600;

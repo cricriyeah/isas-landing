@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Talleres y Capacitación | ISA'S Marketing Digital",
+    description: "Formación especializada en marketing digital, ventas, estoicismo e inteligencia artificial para equipos y emprendedores.",
+};
 import { FiMonitor } from "react-icons/fi";
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
