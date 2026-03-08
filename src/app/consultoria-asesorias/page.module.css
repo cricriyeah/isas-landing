@@ -1,0 +1,378 @@
+/* ===== HERO ===== */
+.serviceHero {
+    margin-top: 94px;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 5% 50px;
+    text-align: center;
+    color: white;
+    height: 60vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+}
+
+.serviceHeroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.25;
+}
+
+.serviceHeroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.serviceIconLarge {
+    font-size: 2.2rem;
+    width: 70px;
+    height: 70px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: var(--transition);
+}
+
+.serviceHero:hover .serviceIconLarge {
+    border-color: var(--border-hover);
+}
+
+.serviceHeroTitle {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.serviceHeroSubtitle {
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+/* ===== SERVICE DETAIL ===== */
+.serviceDetailSection {
+    padding: 50px 5%;
+    background: var(--bg-light);
+}
+
+.serviceContainer {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.serviceContentGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.serviceTextContent h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.serviceTextContent h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.serviceTextContent p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-dark-secondary);
+    margin-bottom: 12px;
+    text-align: justify;
+    transition: var(--transition);
+}
+
+/* ===== IMAGE CONTENT ===== */
+.serviceImageContent {
+    position: relative;
+    height: 420px;
+    min-height: 340px;
+}
+
+.serviceImagePlaceholder {
+    position: absolute;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition);
+}
+
+.serviceImagePlaceholder:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-6px) !important;
+    box-shadow: var(--shadow-md);
+    z-index: 10 !important;
+}
+
+.serviceImagePlaceholder:nth-child(1) {
+    width: 230px;
+    height: 230px;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+.serviceImagePlaceholder:nth-child(2) {
+    width: 300px;
+    height: 210px;
+    top: 130px;
+    right: 0;
+    z-index: 2;
+}
+
+/* ===== METHODOLOGY ===== */
+.methodologySection {
+    padding: 50px 5%;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.methodologyContainer {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 36px;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    position: relative;
+    padding-bottom: 14px;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.methodologySteps {
+    display: flex;
+    justify-content: center;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    gap: 16px;
+}
+
+.methodologySteps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--border-subtle);
+    z-index: 1;
+}
+
+.methodologyStep {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 8px;
+    transition: var(--transition);
+}
+
+.methodologyStep:hover {
+    transform: translateY(-5px);
+}
+
+.methodologyCircle {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    border: 2px solid var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    transition: var(--transition);
+}
+
+.methodologyStep:hover .methodologyCircle {
+    background: var(--accent);
+    color: white;
+}
+
+.methodologyTitle {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.methodologyStep p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+
+/* ===== CTA ===== */
+.serviceCtaSection {
+    padding: 50px 5%;
+    background: var(--bg-secondary);
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.serviceCtaContainer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.serviceCtaTitle {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    line-height: 1.15;
+}
+
+.serviceCtaText {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.serviceCtaButton {
+    background: var(--accent);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.serviceCtaButton:hover {
+    background: var(--accent-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .serviceContentGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .serviceImageContent {
+        height: 350px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 968px) {
+    .methodologySteps {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .methodologySteps::before {
+        display: none;
+    }
+
+    .methodologyStep {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .serviceHero {
+        height: auto;
+        padding: 50px 5% 40px;
+    }
+
+    .serviceHeroTitle {
+        font-size: 1.7rem;
+    }
+
+    .serviceImageContent {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .serviceHero {
+        padding: 40px 5% 30px;
+    }
+
+    .serviceHeroTitle {
+        font-size: 1.5rem;
+    }
+
+    .serviceImageContent {
+        height: 260px;
+    }
+
+    .serviceImagePlaceholder:nth-child(1) {
+        width: 180px;
+        height: 180px;
+        left: 0;
+    }
+
+    .serviceImagePlaceholder:nth-child(2) {
+        width: 230px;
+        height: 160px;
+    }
+}

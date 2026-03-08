@@ -1,0 +1,279 @@
+/* ===== HERO ===== */
+.serviceHero {
+    margin-top: 94px;
+    padding: 60px 5% 50px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+}
+
+.serviceHeroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.25;
+}
+
+.serviceHeroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.serviceIconLarge {
+    font-size: 2.2rem;
+    width: 70px;
+    height: 70px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.serviceHeroTitle {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.serviceHeroSubtitle {
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+/* ===== SERVICE DETAIL ===== */
+.serviceDetailSection {
+    padding: 50px 5%;
+    background: var(--bg-secondary);
+}
+
+.serviceContainer {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.serviceTextIntro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.serviceTextIntro h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    position: relative;
+    padding-bottom: 16px;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.serviceTextIntro h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--neon-gradient);
+    border-radius: 2px;
+    box-shadow: var(--neon-shadow);
+}
+
+.serviceTextIntro p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.modernCard {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    border-radius: 32px;
+    padding: 32px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+}
+
+.modernCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 32px;
+    padding: 2px;
+    background: var(--neon-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.modernCard:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--neon-shadow);
+}
+
+.modernCard:hover::before {
+    opacity: 1;
+}
+
+.modernCardIconWrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 229, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--accent);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.12);
+}
+
+.modernCard:hover .modernCardIconWrapper {
+    background: var(--neon-gradient);
+    color: white;
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 32px rgba(255, 0, 60, 0.15);
+}
+
+.modernCardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.modernCardDesc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* ===== CTA ===== */
+.serviceCtaSection {
+    padding: 50px 5%;
+    background: var(--bg-primary);
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.serviceCtaContainer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.serviceCtaTitle {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    line-height: 1.15;
+}
+
+.serviceCtaText {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.serviceCtaButton {
+    background: var(--accent);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.serviceCtaButton:hover {
+    background: var(--accent-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .servicesGrid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .serviceHero {
+        height: auto;
+        min-height: 320px;
+        padding: 50px 5% 40px;
+    }
+
+    .serviceHeroTitle {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .serviceHero {
+        min-height: 280px;
+        padding: 40px 5% 30px;
+    }
+
+    .serviceHeroTitle {
+        font-size: 1.5rem;
+    }
+
+    .serviceIconLarge {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+    }
+}
