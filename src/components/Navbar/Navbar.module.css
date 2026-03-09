@@ -8,7 +8,6 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
-    transform: translateZ(0);
 }
 
 .navContainer {
@@ -220,7 +219,9 @@
         top: 60px;
         left: 0;
         right: 0;
-        bottom: 0;
+        height: 100vh;
+        padding-bottom: 120px;
+        width: 100vw;
         background: rgba(11, 20, 38, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
