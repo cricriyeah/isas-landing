@@ -8,6 +8,7 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
+    transform: translateZ(0);
 }
 
 .navContainer {
@@ -25,6 +26,8 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1001;
 }
 
 .navbarLogo {
@@ -227,6 +230,8 @@
         transform: translateX(100%);
         transition: transform 0.3s ease;
         overflow-y: auto;
+        z-index: 1000;
+        -webkit-overflow-scrolling: touch;
     }
 
     .navMenu li {
