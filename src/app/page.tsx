@@ -65,7 +65,7 @@ export default function Home() {
         {/* Parte 1 */}
         <div className={`${styles.aboutPart} ${styles.partOne}`} data-aos="fade-right">
           <div className={styles.aboutImage}>
-            <Image src="/isabel.png" alt="Abogada Isabel de la Rosa" width={400} height={400} className={styles.imagePlaceholder} />
+            <Image src="/isabelfoto.png" alt="Abogada Isabel de la Rosa" width={400} height={400} className={styles.imagePlaceholder} />
           </div>
           <div className={styles.aboutText}>
             <h3 className={styles.personTitle}>Abogada Isabel de la Rosa</h3>
@@ -102,7 +102,7 @@ export default function Home() {
         {/* Parte 2 */}
         <div className={`${styles.aboutPart} ${styles.partTwo}`} data-aos="fade-left">
           <div className={styles.aboutImage}>
-            <Image src="/isaias2.png" alt="Maestro Isaias Osuna Barrera" width={400} height={400} className={styles.imagePlaceholder} />
+            <Image src="/isasfoto1.jpeg" alt="Maestro Isaias Osuna Barrera" width={400} height={400} className={styles.imagePlaceholder} />
           </div>
           <div className={styles.aboutText}>
             <h3 className={styles.personTitle}>Maestro Isaias Osuna Barrera</h3>
@@ -138,45 +138,7 @@ export default function Home() {
 
       </section>
 
-      {/* Sección Filosofía (Anteriormente Parte 3 de Conócenos) */}
-      <section className={styles.philosophySection}>
-        <div className={styles.philosophyContainer} data-aos="fade-up">
-          <h2 className={styles.philosophyTitle}>Somos Isa&apos;s Marketing Digital</h2>
 
-          <p className={styles.philosophyDescription}>
-            En Isa&apos;s Marketing Digital somos más que una agencia: somos un equipo de estrategas, diseñadores y mentes creativas comprometidas con el crecimiento de cada marca que confía en nosotros. Nuestra filosofía se basa en:
-          </p>
-
-          <div className={styles.philosophyGrid}>
-            <div className={styles.philCard} data-aos="fade-up" data-aos-delay="100">
-              <div className={styles.philIconWrapper}><FiActivity className={styles.philIcon} /></div>
-              <h3 className={styles.philCardTitle}>La constancia</h3>
-            </div>
-            <div className={styles.philCard} data-aos="fade-up" data-aos-delay="200">
-              <div className={styles.philIconWrapper}><FiBook className={styles.philIcon} /></div>
-              <h3 className={styles.philCardTitle}>El pensamiento estoico</h3>
-            </div>
-            <div className={styles.philCard} data-aos="fade-up" data-aos-delay="300">
-              <div className={styles.philIconWrapper}><FiShield className={styles.philIcon} /></div>
-              <h3 className={styles.philCardTitle}>El control de las emociones</h3>
-            </div>
-            <div className={styles.philCard} data-aos="fade-up" data-aos-delay="400">
-              <div className={styles.philIconWrapper}><FiEye className={styles.philIcon} /></div>
-              <h3 className={styles.philCardTitle}>La claridad en las decisiones</h3>
-            </div>
-            <div className={styles.philCard} data-aos="fade-up" data-aos-delay="500">
-              <div className={styles.philIconWrapper}><FiTarget className={styles.philIcon} /></div>
-              <h3 className={styles.philCardTitle}>La acción enfocada</h3>
-            </div>
-          </div>
-
-          <div className={styles.philosophyFooterBox} data-aos="zoom-in" data-aos-delay="600">
-            <p className={styles.philosophyFooter}>
-              Entendemos que el éxito no llega por suerte, sino como resultado de un trabajo constante y disciplinado.
-            </p>
-          </div>
-        </div>
-      </section>
 
 
       {/* Sección Servicios */}
@@ -242,14 +204,39 @@ export default function Home() {
           <h2 className={styles.clientsTitle} data-aos="fade-up">NUESTROS CLIENTES</h2>
           <div className={styles.carouselContainer}>
             <div className={styles.clientsLogos}>
-              {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7].map((num, i) => {
-                const ext = num === 1 ? 'png' : (num <= 3 ? 'jpg' : 'png');
-                return (
-                  <div className={styles.clientLogo} key={i}>
-                    <Image src={`/c${num}.${ext}`} alt={`Cliente ${num}`} width={200} height={150} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+              {
+                [
+                  { src: '/c1.png', alt: 'Cliente 1' },
+                  { src: '/c2.jpg', alt: 'Cliente 2' },
+                  { src: '/c3.jpg', alt: 'Cliente 3' },
+                  { src: '/c4.png', alt: 'Cliente 4' },
+                  { src: '/c5.png', alt: 'Cliente 5' },
+                  { src: '/c6.png', alt: 'Cliente 6' },
+                  { src: '/puertas-sanjorge.jpeg', alt: 'Puertas San Jorge' },
+                  { src: '/olympus-gym.jpeg', alt: 'Olympus Gym' },
+                ].map((client, i) => (
+                  <div className={styles.clientLogo} key={`first-${i}`}>
+                    <Image src={client.src} alt={client.alt} width={200} height={150} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
                   </div>
-                );
-              })}
+                ))
+              }
+              {
+                [
+                  { src: '/c1.png', alt: 'Cliente 1' },
+                  { src: '/c2.jpg', alt: 'Cliente 2' },
+                  { src: '/c3.jpg', alt: 'Cliente 3' },
+                  { src: '/c4.png', alt: 'Cliente 4' },
+                  { src: '/c5.png', alt: 'Cliente 5' },
+                  { src: '/c6.png', alt: 'Cliente 6' },
+                  { src: '/c7.png', alt: 'Cliente 7' },
+                  { src: '/puertas-sanjorge.png', alt: 'Puertas San Jorge' },
+                  { src: '/olympus-gym.png', alt: 'Olympus Gym' },
+                ].map((client, i) => (
+                  <div className={styles.clientLogo} key={`second-${i}`}>
+                    <Image src={client.src} alt={client.alt} width={200} height={150} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>

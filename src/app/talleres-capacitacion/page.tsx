@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Talleres y Capacitación | ISA'S Marketing Digital",
@@ -20,6 +21,7 @@ const cursos = [
             "Generación de contenido con IA",
             "Herramientas de productividad potenciadas con IA",
         ],
+        imagen: "/14.jpg",
     },
     {
         titulo: "Redes Sociales y Marketing Digital",
@@ -31,6 +33,7 @@ const cursos = [
             "Branding y posicionamiento de marca",
             "Análisis de métricas y optimización de campañas",
         ],
+        imagen: "/15.jpg",
     },
     {
         titulo: "Estoicismo",
@@ -42,6 +45,7 @@ const cursos = [
             "Resiliencia y manejo del estrés",
             "Filosofía práctica para emprendedores",
         ],
+        imagen: "/16.jpg",
     },
     {
         titulo: "Ventas",
@@ -53,6 +57,7 @@ const cursos = [
             "Estrategias de venta consultiva",
             "Negociación y seguimiento postventa",
         ],
+        imagen: "/19.jpg",
     },
     {
         titulo: "Mujer Frente a la Cámara",
@@ -64,6 +69,7 @@ const cursos = [
             "Marca personal y posicionamiento digital",
             "Técnicas para perder el miedo a la cámara",
         ],
+        imagen: "/21.jpeg",
     },
 ];
 
@@ -104,9 +110,15 @@ export default function TalleresCapacitacion() {
                                 data-aos-delay={index * 100}
                             >
                                 <div className={styles.courseCardInner}>
-                                    <div className={styles.courseImagePlaceholder}>
-                                        <span className={styles.placeholderText}>IMAGEN</span>
-                                    </div>
+                                    {curso.imagen ? (
+                                        <div className={styles.courseImagePlaceholder} style={{ position: 'relative', overflow: 'hidden' }}>
+                                            <Image src={curso.imagen} alt={curso.titulo} fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 100vw, 280px" />
+                                        </div>
+                                    ) : (
+                                        <div className={styles.courseImagePlaceholder}>
+                                            <span className={styles.placeholderText}>IMAGEN</span>
+                                        </div>
+                                    )}
                                     <div className={styles.courseContent}>
                                         <h3 className={styles.courseTitle}>{curso.titulo}</h3>
                                         <p className={styles.courseDescription}>{curso.descripcion}</p>

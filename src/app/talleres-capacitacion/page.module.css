@@ -103,7 +103,7 @@
     width: 50px;
     height: 3px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 18px;
 }
 
 .coursesSubtitle {
@@ -185,7 +185,7 @@
     height: 20px;
     background: var(--accent);
     color: white;
-    border-radius: 5px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +206,7 @@
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.8px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     transition: var(--transition);
     white-space: nowrap;
@@ -283,7 +283,7 @@
     background: var(--accent);
     color: var(--btn-text-dark);
     padding: 12px 32px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
@@ -336,10 +336,6 @@
 
     .coursesSection {
         padding: 40px 5%;
-    }
-
-    .courseCardInner {
-        padding: 24px 20px;
     }
 
     .courseIcon {

@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import AOSProvider from "@/components/AOSProvider/AOSProvider";
+import ChatbotButton from "@/components/ChatbotButton/ChatbotButton";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -48,6 +49,7 @@ export default function RootLayout({
         <AOSProvider>
           <Navbar />
           {children}
+          <ChatbotButton />
         </AOSProvider>
       </body>
     </html>

@@ -36,7 +36,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     padding: 5px 16px;
-    border-radius: 50px;
+    border-radius: 18px;
     color: var(--accent);
     font-weight: 600;
     font-size: 0.75rem;
@@ -68,7 +68,7 @@
     background: var(--accent);
     color: var(--btn-text-dark);
     padding: 12px 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;

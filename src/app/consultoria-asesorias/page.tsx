@@ -75,7 +75,7 @@ export default function ConsultoriaAsesorias() {
 
                         <div className={styles.serviceImageContent} data-aos="fade-left" data-aos-delay="200">
                             <div className={styles.serviceImagePlaceholder} data-label="Estrategia Digital">
-                                <Image src="/c1.png" alt="Estrategia Digital" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                                <Image src="/olympus-gym.jpeg" alt="Estrategia Digital - Olympus Gym" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
                             </div>
                             <div className={styles.serviceImagePlaceholder} data-label="Asesoría de Marca">
                                 <Image src="/c2.jpg" alt="Asesoría de Marca" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />

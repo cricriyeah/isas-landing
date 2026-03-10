@@ -80,7 +80,7 @@
     color: rgba(0, 229, 255, 0.35);
     background: rgba(0, 229, 255, 0.04);
     border: 1px solid rgba(0, 229, 255, 0.08);
-    border-radius: 14px;
+    border-radius: 18px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     animation: floatDrift 8s ease-in-out infinite;
@@ -446,7 +446,7 @@
     width: 60px;
     height: 4px;
     background: var(--neon-gradient);
-    border-radius: 2px;
+    border-radius: 18px;
     box-shadow: var(--neon-shadow);
 }
 
@@ -461,7 +461,7 @@
     margin-right: auto;
     background: var(--bg-light-card);
     border: 1px solid var(--border-light);
-    border-radius: 32px;
+    border-radius: 18px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     min-height: 280px;
@@ -476,7 +476,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 32px;
+    border-radius: 18px;
     padding: 2px;
     background: var(--neon-gradient);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -545,7 +545,7 @@
     background: var(--accent);
     margin-right: 8px;
     vertical-align: middle;
-    border-radius: 2px;
+    border-radius: 18px;
 }
 
 .aboutFeatureList {
@@ -578,7 +578,7 @@
     width: 32px;
     height: 32px;
     background: rgba(0, 229, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,6 +620,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: var(--transition);
 }
 
@@ -628,126 +629,251 @@
     transform: scale(1.03);
 }
 
-/* ===== PHILOSOPHY SECTION ===== */
+/* ===== PHILOSOPHY SECTION — LIGHT THEME BENTO GRID ===== */
 .philosophySection {
-    padding: 80px 5%;
-    background: var(--bg-light);
+    padding: 100px 5%;
+    background: linear-gradient(-45deg, #f7f8fa, #ffffff, #eef5f9, #f7f8fa);
+    background-size: 400% 400%;
+    animation: gradientShiftBg 15s ease infinite;
     position: relative;
-    text-align: center;
+    overflow: hidden;
+    color: var(--text-dark);
+}
+
+@keyframes gradientShiftBg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Dynamic Background Shapes */
+.philBgShapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.philShape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.1;
+    animation: driftSlow 15s infinite alternate ease-in-out;
+}
+
+.philShape1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent);
+    top: -10%;
+    left: -10%;
+}
+
+.philShape2 {
+    width: 600px;
+    height: 600px;
+    background: var(--accent-red);
+    bottom: -15%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+@keyframes driftSlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
 }
 
 .philosophyContainer {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.philosophyHeader {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
 }
 
 .philosophyTitle {
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
     margin-bottom: 24px;
-    color: var(--text-dark);
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     line-height: 1.1;
-    position: relative;
-    padding-bottom: 16px;
-    display: inline-block;
-}
-
-.philosophyTitle::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
+    color: var(--text-dark);
 }
 
 .philosophyDescription {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.7;
     color: var(--text-dark-secondary);
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.philosophyGrid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+/* Bento Grid System */
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
 }
 
-.philCard {
-    background: var(--bg-light-card);
-    border: 1px solid var(--border-light);
+.bentoCard {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: var(--radius-lg);
-    padding: 30px 24px;
-    flex: 1;
-    min-width: 180px;
-    max-width: 250px;
-    text-align: center;
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-.philCard:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(0, 0, 0, 0.12);
+.bentoCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 229, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 229, 255, 0.1);
 }
 
-.philIconWrapper {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 229, 255, 0.1);
-    border-radius: 50%;
+.bentoAccent {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bentoHighlight {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(0, 229, 255, 0.05) 100%);
+}
+
+.bentoWide {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(90deg, rgba(11, 20, 38, 0.5) 0%, rgba(255, 0, 60, 0.05) 100%);
+}
+
+@media (max-width: 900px) {
+    .bentoWide {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.bentoWideContent {
+    flex: 1;
+}
+
+.bentoIconWrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin-bottom: 24px;
     color: var(--accent);
-    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    transition: all 0.4s ease;
 }
 
-.philCard:hover .philIconWrapper {
+.bentoCard:hover .bentoIconWrapper {
     background: var(--neon-gradient);
+    border-color: transparent;
     color: white;
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(255, 0, 60, 0.15);
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(255, 0, 60, 0.2);
 }
 
-.philIcon {
+.bentoTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.bentoWide .bentoTitle {
     font-size: 1.5rem;
 }
 
-.philCardTitle {
+.bentoText {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.bentoWide .bentoText {
     font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1.3;
+    max-width: 800px;
 }
 
-.philosophyFooterBox {
-    background: var(--bg-light-card);
-    border: 1px solid var(--border-light);
-    padding: 24px 40px;
-    border-radius: var(--radius-md);
-    display: inline-block;
-    box-shadow: var(--shadow-sm);
+.bentoGlow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--accent);
+    filter: blur(60px);
+    opacity: 0;
+    border-radius: 50%;
+    top: -50px;
+    right: -50px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
-.philosophyFooter {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    line-height: 1.5;
-    margin: 0;
+.bentoCard:hover .bentoGlow {
+    opacity: 0.15;
+}
+
+/* Layout Adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .bentoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bentoWide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .bentoWide {
+        grid-column: span 1;
+    }
+
+    .philosophySection {
+        padding: 70px 5%;
+    }
 }
 
 /* Alternating layouts */
@@ -878,7 +1004,7 @@
     width: 40px;
     height: 3px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 18px;
 }
 
 .servicesGrid {
@@ -892,7 +1018,7 @@
 .modernCard {
     background: var(--bg-card);
     border: 1px solid rgba(0, 229, 255, 0.1);
-    border-radius: 32px;
+    border-radius: 18px;
     padding: 32px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -913,7 +1039,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 32px;
+    border-radius: 18px;
     padding: 2px;
     background: var(--neon-gradient);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -938,7 +1064,7 @@
     width: 60px;
     height: 60px;
     background: rgba(0, 229, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;

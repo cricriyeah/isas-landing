@@ -102,7 +102,7 @@
     width: 40px;
     height: 3px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 18px;
 }
 
 .serviceTextContent p {
@@ -189,7 +189,7 @@
     width: 40px;
     height: 3px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 18px;
 }
 
 .methodologySteps {
@@ -292,7 +292,7 @@
     background: var(--accent);
     color: var(--btn-text-dark);
     padding: 12px 32px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 0.9rem;
     transition: var(--transition);

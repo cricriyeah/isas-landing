@@ -67,7 +67,7 @@
     font-size: 0.82rem;
     font-weight: 500;
     padding: 8px 14px;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.2s ease;
     white-space: nowrap;
     letter-spacing: 0.3px;
@@ -102,7 +102,7 @@
     transform: translateX(-50%) translateY(10px);
     background: var(--bg-primary);
     border: 1px solid rgba(0, 229, 255, 0.2);
-    border-radius: 12px;
+    border-radius: 18px;
     padding: 10px 0;
     list-style: none;
     min-width: 220px;
@@ -154,7 +154,7 @@
     background: var(--accent);
     color: var(--btn-text-dark);
     padding: 10px 24px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 0.82rem;
     text-decoration: none;
@@ -178,7 +178,7 @@
     cursor: pointer;
     padding: 6px;
     margin-left: 8px;
-    border-radius: 8px;
+    border-radius: 18px;
     transition: background 0.2s ease;
 }
 
