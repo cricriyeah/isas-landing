@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Consultoría y Asesorías | ISA'S Marketing Digital",
+    title: "Consultoría y Asesorías | ISA'S Agencia Digital",
     description: "Estrategias personalizadas, auditorías y planes de crecimiento para llevar tu negocio al siguiente nivel con decisiones inteligentes.",
 };
 import Image from "next/image";
@@ -78,7 +78,7 @@ export default function ConsultoriaAsesorias() {
                                 <Image src="/olympus-gym.jpeg" alt="Estrategia Digital - Olympus Gym" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
                             </div>
                             <div className={styles.serviceImagePlaceholder} data-label="Asesoría de Marca">
-                                <Image src="/c2.jpg" alt="Asesoría de Marca" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                                <Image src="/puertas-sanjorge.jpeg" alt="Asesoría de Marca" width={400} height={300} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
                             </div>
                         </div>
                     </div>

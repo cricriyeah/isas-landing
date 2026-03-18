@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Inicio | ISA'S Marketing Digital - Agencia + IA",
-  description: "Bienvenido a ISA'S Marketing Digital. Transformamos marcas con estrategias digitales, desarrollo web de alto impacto y automatizaciones inteligentes.",
+  title: "ISA'S Agencia Digital",
+  description: "Bienvenido a ISA'S Agencia Digital. Transformamos marcas con estrategias digitales, desarrollo web de alto impacto y automatizaciones inteligentes.",
 };
 import Link from "next/link";
 import { FiSmartphone, FiMonitor, FiCode, FiTrendingUp, FiArrowRight, FiActivity, FiBook, FiShield, FiEye, FiTarget, FiStar, FiLayers, FiCpu } from "react-icons/fi";
@@ -65,10 +65,10 @@ export default function Home() {
         {/* Parte 1 */}
         <div className={`${styles.aboutPart} ${styles.partOne}`} data-aos="fade-right">
           <div className={styles.aboutImage}>
-            <Image src="/isabelfoto.png" alt="Abogada Isabel de la Rosa" width={400} height={400} className={styles.imagePlaceholder} />
+            <Image src="/isabelfoto.png" alt="Licenciada Isabel de la Rosa" width={400} height={400} className={styles.imagePlaceholder} />
           </div>
           <div className={styles.aboutText}>
-            <h3 className={styles.personTitle}>Abogada Isabel de la Rosa</h3>
+            <h3 className={styles.personTitle}>Licenciada Isabel de la Rosa</h3>
             <span className={styles.personSubtitle}>Fundadora de Isa&apos;s Marketing</span>
             <p className={styles.personDescription}>
               Creo firmemente en el poder de la estrategia y la legalidad. Este espacio es para ti: emprendedora, líder o dueña de negocio que quiere crecer con bases sólidas y visión clara.
@@ -102,7 +102,7 @@ export default function Home() {
         {/* Parte 2 */}
         <div className={`${styles.aboutPart} ${styles.partTwo}`} data-aos="fade-left">
           <div className={styles.aboutImage}>
-            <Image src="/isasfoto1.jpeg" alt="Maestro Isaias Osuna Barrera" width={400} height={400} className={styles.imagePlaceholder} />
+            <Image src="/isaiasfoto2.png" alt="Maestro Isaias Osuna Barrera" width={400} height={400} className={styles.imagePlaceholder} />
           </div>
           <div className={styles.aboutText}>
             <h3 className={styles.personTitle}>Maestro Isaias Osuna Barrera</h3>
@@ -208,12 +208,17 @@ export default function Home() {
                 [
                   { src: '/c1.png', alt: 'Cliente 1' },
                   { src: '/c2.jpg', alt: 'Cliente 2' },
-                  { src: '/c3.jpg', alt: 'Cliente 3' },
                   { src: '/c4.png', alt: 'Cliente 4' },
                   { src: '/c5.png', alt: 'Cliente 5' },
                   { src: '/c6.png', alt: 'Cliente 6' },
                   { src: '/puertas-sanjorge.jpeg', alt: 'Puertas San Jorge' },
                   { src: '/olympus-gym.jpeg', alt: 'Olympus Gym' },
+                  { src: '/chevrolet.jpg', alt: 'Chevrolet' },
+                  { src: '/ford.png', alt: 'Ford' },
+                  { src: '/mazda.jpg', alt: 'Mazda' },
+                  { src: '/toyota.png', alt: 'Toyota' },
+
+
                 ].map((client, i) => (
                   <div className={styles.clientLogo} key={`first-${i}`}>
                     <Image src={client.src} alt={client.alt} width={200} height={150} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
@@ -224,13 +229,16 @@ export default function Home() {
                 [
                   { src: '/c1.png', alt: 'Cliente 1' },
                   { src: '/c2.jpg', alt: 'Cliente 2' },
-                  { src: '/c3.jpg', alt: 'Cliente 3' },
                   { src: '/c4.png', alt: 'Cliente 4' },
                   { src: '/c5.png', alt: 'Cliente 5' },
                   { src: '/c6.png', alt: 'Cliente 6' },
                   { src: '/c7.png', alt: 'Cliente 7' },
                   { src: '/puertas-sanjorge.png', alt: 'Puertas San Jorge' },
                   { src: '/olympus-gym.png', alt: 'Olympus Gym' },
+                  { src: '/chevrolet.jpg', alt: 'Chevrolet' },
+                  { src: '/ford.png', alt: 'Ford' },
+                  { src: '/mazda.jpg', alt: 'Mazda' },
+                  { src: '/toyota.png', alt: 'Toyota' },
                 ].map((client, i) => (
                   <div className={styles.clientLogo} key={`second-${i}`}>
                     <Image src={client.src} alt={client.alt} width={200} height={150} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />

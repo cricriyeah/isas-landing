@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Permitir el acceso a la carpeta _next que por defecto HostGator podría estar bloqueando
+  RewriteCond %{REQUEST_URI} ^/_next/.*$
+  RewriteRule ^(.*)$ - [L,NC]
+  
+  # Si es un archivo o directorio que existe (como imagenes)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # Si se pide una ruta y no tiene extensión html, intentar agregar .html
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+  
+  # Rutas a directorios que tienen un index.html (gracias a trailingSlash)
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>

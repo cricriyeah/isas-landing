@@ -19,7 +19,7 @@ export default function Footer() {
                             className={styles.footerLogo}
                         />
                         <p className={styles.brandDescription}>
-                            Agencia de marketing digital especializada en impulsar marcas con estrategia, creatividad e inteligencia artificial.
+                            Agencia digital especializada en impulsar marcas con estrategia, soluciones tecnológicas, creatividad e inteligencia artificial.
                         </p>
                     </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
                         </div>
                         <div className={styles.contactItem}>
                             <FiClock size={16} />
-                            <span>Lun - Vie: 9:00 AM - 7:00 PM</span>
+                            <span>Lun - Vie: 9:00 AM - 6:00 PM</span>
                         </div>
                     </div>
                 </div>

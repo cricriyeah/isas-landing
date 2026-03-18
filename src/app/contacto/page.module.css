@@ -305,7 +305,7 @@
 }
 
 .infoText a {
-    color: var(--accent-light);
+    color: var(--text-dark-secondary);
     text-decoration: none;
 }
 

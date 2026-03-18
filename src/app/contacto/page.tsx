@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Contacto | ISA'S Marketing Digital",
+    title: "Contacto | ISA'S Agencia Digital",
     description: "Contáctanos para impulsar tu negocio con marketing digital, desarrollo web y automatizaciones con IA en La Paz, B.C.S.",
 };
 import { FiSend, FiUsers, FiStar, FiClock, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
@@ -86,7 +86,7 @@ export default function Contacto() {
                                 <div className={styles.infoIcon}><FiMail size={16} /></div>
                                 <div className={styles.infoContent}>
                                     <h4 className={styles.infoTitle}>Email</h4>
-                                    <p className={styles.infoText}><a href="mailto:info@isasmkt.com">info@isasmkt.com</a></p>
+                                    <p className={styles.infoText}><a href="mailto:contacto@isasdigital.com">contacto@isasdigital.com</a></p>
                                 </div>
                             </div>
                             <div className={styles.infoItem}>

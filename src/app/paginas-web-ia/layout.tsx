@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Páginas Web e IA | ISA'S Marketing Digital",
+    title: "Páginas Web e IA | ISA'S Agencia Digital",
     description: "Soluciones de desarrollo de software, creación de páginas web y aplicaciones móviles equipadas con automatizaciones de inteligencia artificial.",
 };
 

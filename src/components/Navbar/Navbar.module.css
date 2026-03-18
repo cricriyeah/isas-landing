@@ -169,6 +169,10 @@
     box-shadow: 0 8px 28px rgba(0, 131, 176, 0.15);
 }
 
+.navMenu li.mobileCtaWrapper {
+    display: none;
+}
+
 /* ===== HAMBURGER ===== */
 .hamburger {
     display: none;
@@ -221,7 +225,8 @@
         right: 0;
         height: 100vh;
         padding-bottom: 120px;
-        width: 100vw;
+        width: 100%;
+
         background: rgba(11, 20, 38, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
@@ -251,6 +256,34 @@
         width: 100%;
         text-align: left;
         border-radius: 12px;
+    }
+
+    .navMenu li.mobileCtaWrapper {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobileCtaButton {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: var(--accent);
+        color: var(--btn-text-dark);
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+    }
+
+    .mobileCtaButton:active {
+        background: var(--accent-light);
+        transform: scale(0.98);
     }
 
     /* Mobile Dropdown Fixes */

@@ -45,15 +45,21 @@ export default function Navbar() {
                             SERVICIOS <FiChevronDown className={styles.dropdownIcon} />
                         </a>
                         <ul className={styles.dropdownMenu}>
-                            <li><Link href="/paginas-web-ia" onClick={closeMenu}>Desarrollo de Software + IA</Link></li>
+                            <li><Link href="/paginas-web-ia" onClick={closeMenu}>Desarrollo de Software + Inteligencia Artificial</Link></li>
                             <li><Link href="/gestion-redes-sociales" onClick={closeMenu}>Gestión de Redes</Link></li>
                             <li><Link href="/consultoria-asesorias" onClick={closeMenu}>Consultoría</Link></li>
                             <li><Link href="/talleres-capacitacion" onClick={closeMenu}>Talleres</Link></li>
                         </ul>
                     </li>
+                    <li><Link href="/paquetes-servicios" className={styles.navLink} onClick={closeMenu}>PAQUETES</Link></li>
                     <li><Link href="/#clientes" className={styles.navLink} onClick={closeMenu}>CLIENTES</Link></li>
                     <li><Link href="/#conocenos" className={styles.navLink} onClick={closeMenu}>CONÓCENOS</Link></li>
                     <li><Link href="/casos-exito" className={styles.navLink} onClick={closeMenu}>CASOS DE ÉXITO</Link></li>
+                    <li className={styles.mobileCtaWrapper}>
+                        <Link href="/contacto" className={styles.mobileCtaButton} onClick={closeMenu}>
+                            CONTÁCTANOS
+                        </Link>
+                    </li>
                 </ul>
 
                 <Link href="/contacto" className={styles.ctaButton} onClick={closeMenu}>

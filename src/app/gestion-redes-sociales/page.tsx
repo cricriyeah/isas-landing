@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Gestión de Redes Sociales | ISA'S Marketing Digital",
+    title: "Gestión de Redes Sociales | ISA'S Agencia Digital",
     description: "Potenciamos tu presencia digital con estrategias de contenido, community management y producción de video para conectar con clientes potenciales.",
 };
 import { FiSmartphone, FiVideo, FiTrendingUp, FiArrowRight, FiUsers, FiMonitor } from "react-icons/fi";
