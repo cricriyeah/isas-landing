@@ -43,7 +43,7 @@ export default function Home() {
           />
 
 
-          <Link href="/contacto" className={styles.btnImpulsa}>
+          <Link href="/paquetes-servicios" className={styles.btnImpulsa}>
             <span className={styles.btnText}>IMPULSA TU MARCA</span>
             <span className={styles.btnShimmer}></span>
           </Link>
